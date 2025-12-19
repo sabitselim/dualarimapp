@@ -76,12 +76,12 @@ Kullanılan İzinler
 •	Bildirim/Alarm (POST_NOTIFICATIONS) → Hatırlatmaların çalışması için
 •	SCHEDULE_EXACT_ALARM → Zamanlanmış bildirimlerin tam zamanında çalışması için (Android 12+)
 •	WAKE_LOCK → Alarm/sayaç çalışırken cihazın uykuya geçmesini engellemek için
-•	Titreşim (VIBRATE) → Bildirim geri bildirimi
+•	Titreşim (VIBRATE) izni, bildirimlerin iletilmesi ve uygulama içi etkileşimlerde kullanıcıya geri bildirim sağlanması amacıyla kullanılmaktadır.
 •	İnternet → Yalnızca reklam yüklemek için
 •	Reklam Kimliği (AD_ID)
-o	Sadece AdMob’un çalışması için kullanılır
-o	Kişisel reklam yapılmaz
-o	Kullanıcı profili oluşturulmaz
+ - Sadece AdMob’un çalışması için kullanılır
+ - Kişisel reklam yapılmaz
+ - Kullanıcı profili oluşturulmaz
 Talep Edilmeyen İzinler
 Uygulama şu verilere erişmez:
 •	Konum / GPS
@@ -101,7 +101,7 @@ Reklam Politikası
 •	Tüm bölgelerde Non-Personalized Ads (NPA) sunulur
 •	Kullanıcı profili oluşturulmaz
 •	Davranışsal takip yapılmaz
-•	EEA dâhil hiçbir bölgede kişisel reklam yoktur
+•	EEA dahil hiçbir bölgede kişisel reklam yoktur
 Bu nedenle rıza formu (consent form) gerekli değildir.
 Google’ın İşlediği Teknik Veriler
 Google yalnızca anonim teknik bilgileri işler (cihaz modeli, donanım, ülke seviyesi IP).
@@ -116,7 +116,7 @@ Reklam tıklamalarında:
 •	Uygulama tıklama takibi yapmaz
 WebView yalnızca bazı reklam formatlarının gösterimi için kullanılır ve:
 •	Kişisel veri toplamaz
-•	Geçici verileri cihaz kaldırıldığında silinir
+•	Uygulama kapatıldığında veya WebView oturumu sona erdiğinde geçici veriler silinir.
 •	SafeBrowsing aktiftir
 •	Metrics opt-out açıktır
 ________________________________________
@@ -199,7 +199,7 @@ There is no server-based or automatic local backup feature. Therefore, user data
 • Device reset
 • Reinstalling the app
 All user-generated content is the sole responsibility of the user.
-Installing a new version does not guarantee the preservation of data.
+Installing a new version does not guarantee data preservation, as the app does not use cloud or automatic backup mechanisms.
 ________________________________________
 4. User-Created Content
 Users have full control over the content they create (prayers, dhikr, notes, images, etc.).
@@ -215,12 +215,12 @@ Permissions Used
 • Notifications/Alarm (POST_NOTIFICATIONS) → To ensure reminders work
 • SCHEDULE_EXACT_ALARM → To trigger scheduled reminders precisely (Android 12+)
 • WAKE_LOCK → To prevent the device from sleeping while alarms/counters run
-• Vibration (VIBRATE) → Feedback for notifications
+• The VIBRATE permission is used to deliver notifications and to provide user feedback during in-app interactions.
 • Internet → Only to load advertisements
 • Advertising ID (AD_ID) →
-o Used only for AdMob to function
-o No personalized advertising
-o No user profile creation
+ - Used only for AdMob to function
+ - No personalized advertising
+ - No user profile creation
 Permissions Not Requested
 The app does not access:
 • Location / GPS
@@ -257,8 +257,8 @@ Ad Redirects:
 WebView Usage:
 WebView is used only to display certain ad formats and:
 • Does not collect personal data
-• Does not store temporary data
-• Deletes all data when the app is uninstalled
+• Temporary data is stored only during the session
+• Temporary data is cleared when the app is closed or the WebView session ends
 • SafeBrowsing is enabled
 • Metrics opt-out is enabled
 ________________________________________
@@ -305,5 +305,6 @@ For any questions or requests:
 </body>
 
 </html>
+
 
 
